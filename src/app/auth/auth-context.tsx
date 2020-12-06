@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 
-type AuthDispatch = (action: any) => void
+import { AuthAction } from './authActions'
+
+type AuthDispatch = (action: AuthAction) => void
 
 type AuthState = {
     authenticated: boolean // to check if authenticated or not
+    loading: boolean // to check if authenticated or not
 }
 
 export const AuthStateCtx = React.createContext<AuthState | undefined>(undefined)

@@ -1,3 +1,4 @@
+import BackdropLoader from 'components/BackdropLoader'
 import React from 'react'
 
 import { useAuthState } from './auth/auth-context'
@@ -6,13 +7,19 @@ import LoginPage from './auth/LoginPage'
 import Main from './main/Main'
 
 function App() {
-    const { authenticated } = useAuthState()
+    const { authenticated, loading } = useAuthState()
+
+    if (loading) {
+        return <BackdropLoader isLoading={loading} />
+    }
 
     return authenticated ? <Main /> : <LoginPage />
 }
 
-export default () => (
+const Root = () => (
     <AuthProvider>
         <App />
     </AuthProvider>
 )
+
+export default Root

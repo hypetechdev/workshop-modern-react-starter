@@ -4,16 +4,15 @@ import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 
-interface Props {}
+interface Props {
+    onLoginSubmit: (data: any) => void
+}
 
-const LoginForm = (props: Props) => {
-    const history = useHistory()
-
+const LoginForm: React.FC<Props> = ({ onLoginSubmit }) => {
     const handleFormSubmit = (event: any) => {
         event.preventDefault()
-        setTimeout(() => {
-            history.push('/dashboard')
-        }, 2000)
+
+        onLoginSubmit({ email: '' })
     }
 
     return (

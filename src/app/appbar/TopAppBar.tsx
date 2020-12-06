@@ -1,14 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 
-import {
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-    Badge,
-    makeStyles,
-} from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, Typography, makeStyles } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
 const drawerWidth = 240
@@ -63,15 +56,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-interface Props {}
+type Props = {
+    open: boolean
+    handleDrawerOpen: any
+}
 
-const TopAppBar = (props: Props) => {
+const TopAppBar: React.FC<Props> = ({ open, handleDrawerOpen }) => {
     const classes = useStyles()
-
-    const [open, setOpen] = React.useState(true)
-    const handleDrawerOpen = () => {
-        setOpen(true)
-    }
 
     return (
         <AppBar
