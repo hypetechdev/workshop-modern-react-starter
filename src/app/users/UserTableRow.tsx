@@ -23,4 +23,4 @@ const UserTableRow: React.FC<Props> = ({ user }) => {
     )
 }
 
-export default UserTableRow
+export default React.memo(UserTableRow)

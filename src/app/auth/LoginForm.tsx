@@ -1,5 +1,4 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useRef } from 'react'
 
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -15,8 +14,16 @@ const LoginForm: React.FC<Props> = ({ onLoginSubmit }) => {
         onLoginSubmit({ email: '' })
     }
 
+    // Using ref to access form
+    const formRef = useRef<HTMLFormElement>(null)
+
+    const handleFormReset = () => {
+        // Show how to use form reset using ref
+        formRef.current?.reset()
+    }
+
     return (
-        <form noValidate onSubmit={handleFormSubmit}>
+        <form noValidate onSubmit={handleFormSubmit} ref={formRef}>
             <TextField
                 variant="outlined"
                 margin="normal"
@@ -41,6 +48,10 @@ const LoginForm: React.FC<Props> = ({ onLoginSubmit }) => {
             />
             <Button type="submit" fullWidth variant="contained" color="primary">
                 Sign In
+            </Button>
+            <p />
+            <Button fullWidth variant="text" color="secondary" onClick={handleFormReset}>
+                Reset
             </Button>
         </form>
     )

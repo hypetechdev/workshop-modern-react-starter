@@ -24,6 +24,8 @@ interface Props {
 const UsersTable: React.FC<Props> = ({ users = [] }) => {
     const classes = useStyles()
 
+    // const memoizesUsers = React.useMemo(() => [...users, ...users], [users])
+
     if (!users.length) {
         return <EmptyView title="There are no users here" />
     }

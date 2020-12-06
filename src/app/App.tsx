@@ -9,11 +9,12 @@ import Main from './main/Main'
 function App() {
     const { authenticated, loading } = useAuthState()
 
-    if (loading) {
-        return <BackdropLoader isLoading={loading} />
-    }
-
-    return authenticated ? <Main /> : <LoginPage />
+    return (
+        <>
+            <BackdropLoader isLoading={loading} />
+            {authenticated ? <Main /> : <LoginPage />}
+        </>
+    )
 }
 
 const Root = () => (
