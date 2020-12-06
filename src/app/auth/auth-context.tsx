@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { createContext, useContext } from 'react';
 
 import { AuthAction } from './authActions'
 
@@ -9,8 +9,8 @@ type AuthState = {
     loading: boolean // to check if authenticated or not
 }
 
-export const AuthStateCtx = React.createContext<AuthState | undefined>(undefined)
-export const AuthDispatchCtx = React.createContext<AuthDispatch | undefined>(undefined)
+export const AuthStateCtx = createContext<AuthState | undefined>(undefined)
+export const AuthDispatchCtx = createContext<AuthDispatch | undefined>(undefined)
 
 export const useAuthState = (): AuthState => {
     const ctx = useContext(AuthStateCtx)

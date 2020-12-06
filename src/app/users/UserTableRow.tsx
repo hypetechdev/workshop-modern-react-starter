@@ -1,5 +1,4 @@
-import React from 'react'
-
+import { memo, FC } from 'react'
 import User from 'lib/models/User'
 
 import TableCell from '@material-ui/core/TableCell'
@@ -9,7 +8,7 @@ interface Props {
     user: User
 }
 
-const UserTableRow: React.FC<Props> = ({ user }) => {
+const UserTableRow: FC<Props> = ({ user }) => {
     return (
         <TableRow>
             <TableCell component="th" scope="row">
@@ -23,4 +22,4 @@ const UserTableRow: React.FC<Props> = ({ user }) => {
     )
 }
 
-export default React.memo(UserTableRow)
+export default memo(UserTableRow)

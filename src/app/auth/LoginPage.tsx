@@ -1,4 +1,4 @@
-import React from 'react'
+import { useCallback } from 'react';
 
 import * as authService from 'lib/services/authService'
 
@@ -37,7 +37,7 @@ const LoginPage = () => {
         }
     }
 
-    const handleLoginCallback = React.useCallback(handleLogin, [authDispatch])
+    const handleLoginCallback = useCallback(handleLogin, [authDispatch])
 
     return (
         <Container component="main" maxWidth="xs">

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import { useReducer, FC } from 'react'
 import { useMount } from 'react-use'
 
 import * as authService from 'lib/services/authService'
@@ -6,7 +6,7 @@ import * as authService from 'lib/services/authService'
 import * as authActions from './authActions'
 import { AuthDispatchCtx, AuthStateCtx } from './auth-context'
 
-const AuthProvider: React.FC = ({ children }) => {
+const AuthProvider: FC = ({ children }) => {
     const { authReducer, defaultAuthState } = authActions
     const [state, dispatch] = useReducer(authReducer, defaultAuthState)
 

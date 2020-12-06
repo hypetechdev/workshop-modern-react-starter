@@ -1,9 +1,9 @@
-import React, { Suspense } from 'react'
+import { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom'
 
 import DashboardPage from 'app/dashboard/DashboardPage'
 
-const UsersPage = React.lazy(() => import('app/users/UsersPage'))
+const UsersPage = lazy(() => import('app/users/UsersPage'))
 
 const MainRoutes = () => (
     <Suspense fallback={<div>Loading...</div>}>

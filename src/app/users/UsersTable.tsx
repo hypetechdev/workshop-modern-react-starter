@@ -1,4 +1,5 @@
-import React from 'react'
+import { FC } from 'react'
+
 import { makeStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -21,10 +22,10 @@ interface Props {
     users?: User[]
 }
 
-const UsersTable: React.FC<Props> = ({ users = [] }) => {
+const UsersTable: FC<Props> = ({ users = [] }) => {
     const classes = useStyles()
 
-    // const memoizesUsers = React.useMemo(() => [...users, ...users], [users])
+    // const memoizesUsers = useMemo(() => [...users, ...users], [users])
 
     if (!users.length) {
         return <EmptyView title="There are no users here" />

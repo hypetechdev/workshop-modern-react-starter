@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import clsx from 'clsx'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -45,7 +45,7 @@ type PropTypes = {
     handleDrawerClose: any
 }
 
-const NavigationDrawer: React.FC<PropTypes> = ({ open, handleDrawerClose }) => {
+const NavigationDrawer: FC<PropTypes> = ({ open, handleDrawerClose }) => {
     const classes = useStyles()
     return (
         <Drawer

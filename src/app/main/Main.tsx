@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react';
 import { Box, CssBaseline, makeStyles } from '@material-ui/core'
 
 import TopAppBar from '../appbar/TopAppBar'

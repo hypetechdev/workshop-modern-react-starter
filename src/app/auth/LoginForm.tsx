@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef, FC } from 'react'
 
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -7,7 +7,7 @@ interface Props {
     onLoginSubmit: (data: any) => void
 }
 
-const LoginForm: React.FC<Props> = ({ onLoginSubmit }) => {
+const LoginForm: FC<Props> = ({ onLoginSubmit }) => {
     const handleFormSubmit = (event: any) => {
         event.preventDefault()
 

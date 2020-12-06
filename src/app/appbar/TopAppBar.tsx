@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import clsx from 'clsx'
 
 import { AppBar, Toolbar, IconButton, Typography, makeStyles } from '@material-ui/core'
@@ -61,7 +61,7 @@ type Props = {
     handleDrawerOpen: any
 }
 
-const TopAppBar: React.FC<Props> = ({ open, handleDrawerOpen }) => {
+const TopAppBar: FC<Props> = ({ open, handleDrawerOpen }) => {
     const classes = useStyles()
 
     return (

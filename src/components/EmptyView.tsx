@@ -1,10 +1,11 @@
+import { FC } from 'react'
 import { Box, Typography } from '@material-ui/core'
 
 interface Props {
     title: string
 }
 
-const EmptyView: React.FC<Props> = ({ title, children }) => {
+const EmptyView: FC<Props> = ({ title, children }) => {
     return (
         <Box display="flex" justifyContent="center" p={8}>
             <Typography variant="h4">{title}</Typography>

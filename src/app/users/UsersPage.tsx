@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { useMount } from 'react-use'
 
 import { CircularProgress, Typography } from '@material-ui/core'

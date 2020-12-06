@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import Backdrop from '@material-ui/core/Backdrop'
@@ -17,7 +17,7 @@ interface Props {
     isLoading: boolean
 }
 
-const BackdropLoader: React.FC<Props> = ({ isLoading }) => {
+const BackdropLoader: FC<Props> = ({ isLoading }) => {
     const classes = useStyles()
 
     return (
